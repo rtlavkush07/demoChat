@@ -21,7 +21,7 @@ export const SocketProvider = ({ children }) => {
       const userId = authUser?.user?._id || authUser?._id;
 
       if (userId) {
-        const socket = io("http://localhost:3002/", {
+        const socket = io("https://demochat-1.onrender.com", {
           query: {
             userID: userId,
           },
