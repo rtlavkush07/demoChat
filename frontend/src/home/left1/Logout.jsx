@@ -15,7 +15,7 @@ function Logout() {
     const handleLogOut = async () => {
         setLoading(true);
         try {
-            const res = await axios.post("/api/user/logout");
+            const res = await axios.post("https://demochat-1.onrender.com/api/user/logout");
             localStorage.removeItem("user");
             Cookies.remove("jwt"); 
             setAuthUser(undefined); // Update auth context to trigger re-render
