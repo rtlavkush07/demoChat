@@ -18,7 +18,9 @@ const Login = () => {
       password: data.password,
     };
     await axios
-      .post("https://demochat-1.onrender.com/api/user/login", userData)
+      .post("https://demochat-1.onrender.com/api/user/login", userData,{
+         withCredentials: true
+           );
       .then((response) => {
         console.log("Login successfully", response.data);
         if (response.data) {
