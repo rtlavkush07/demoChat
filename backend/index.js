@@ -16,7 +16,7 @@ const MONGO_URL = process.env.MONGO_URL;
 
 // CORS Middleware for API
 app.use(cors({
-  origin: 'https://demochat-1.onrender.com',
+  origin: 'https://demo-chat-eight-xi.vercel.app',
   credentials: true
 }));
 
