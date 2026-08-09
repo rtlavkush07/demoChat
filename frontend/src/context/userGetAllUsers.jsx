@@ -11,12 +11,13 @@ const getUsers = async()=>{
  try {
        // const token = Cookies.get('jwt');
     const user = JSON.parse(localStorage.getItem("user"));
-
+console.log(user);
+console.log("TOKEN:", user?.token);
        const response = await axios.get('https://demochat-1.onrender.com/api/user/getUserProfile', {
         Credentials: 'include',
         
          headers: {
-           Authorization: `Bearer ${user.token}`
+           Authorization: `Bearer ${user}`
          }
        });
        console.log("all users fetced", response.data)
