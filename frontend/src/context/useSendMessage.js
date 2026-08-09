@@ -13,7 +13,7 @@ function useSendMessage() {
                 console.log("Sending message:", message);
 
                 const res = await axios.post(
-                    `/api/message/send/${selectedConversation._id}`,
+                    `https://demochat-1.onrender.com/api/message/send/${selectedConversation._id}`,
                     { message }
                 );
 
