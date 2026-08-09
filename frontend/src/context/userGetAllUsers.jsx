@@ -11,7 +11,7 @@ const getUsers = async()=>{
  try {
        const token = Cookies.get('jwt');
     
-       const response = await axios.get('/api/user/getUserProfile', {
+       const response = await axios.get('https://demochat-1.onrender.com/api/user/getUserProfile', {
         Credentials: 'include',
         
          headers: {
