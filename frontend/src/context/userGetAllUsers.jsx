@@ -17,7 +17,7 @@ console.log("TOKEN:", user?.token);
         Credentials: 'include',
         
          headers: {
-           Authorization: `Bearer ${user}`
+           Authorization: `Bearer ${user?.token}`
          }
        });
        console.log("all users fetced", response.data)
