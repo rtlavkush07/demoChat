@@ -16,7 +16,7 @@ const useGetMessage = () => {
                 // console.log("Selected Conversation ID:", selectedConversation?._id);
 
            const res = await axios.get(
-             `/api/message/get/${selectedConversation._id}`
+             `https://demochat-1.onrender.com/api/message/get/${selectedConversation._id}`
           );
 
             setMessages(res.data);
