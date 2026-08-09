@@ -9,7 +9,7 @@ function userGetAllUsers() {
 const getUsers = async()=>{
   setLoading(true);
  try {
-       const token = Cookies.get('jwt');
+       // const token = Cookies.get('jwt');
     const user = JSON.parse(localStorage.getItem("user"));
 
        const response = await axios.get('https://demochat-1.onrender.com/api/user/getUserProfile', {
