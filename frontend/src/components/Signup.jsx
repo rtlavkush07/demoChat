@@ -26,7 +26,7 @@ const Signup = () => {
       confirmPassword: data.confirmPassword,
     };
     await axios
-      .post("/api/user/signup", userData)
+      .post("https://demochat-1.onrender.com/api/user/signup", userData)
       .then((response) => {
         console.log("User created successfully", response.data);
         if (response.data) {
