@@ -14,11 +14,12 @@ const getUsers = async()=>{
 console.log(user);
 console.log("TOKEN:", user?.token);
        const response = await axios.get('https://demochat-1.onrender.com/api/user/getUserProfile', {
-        Credentials: 'include',
+        // Credentials: 'include',
         
-         headers: {
-           Authorization: `Bearer ${user?.token}`
-         }
+        //  headers: {
+        //    Authorization: `Bearer ${user?.token}`
+        //  }
+           withCredentials: true
        });
        console.log("all users fetced", response.data)
        setAllUsers(response.data);
