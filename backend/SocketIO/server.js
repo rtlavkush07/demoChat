@@ -10,7 +10,8 @@ const server = http.createServer(app);
 // Allow frontend at port 5173 cors origin
 const io = new Server(server, {
   cors: {
-    origin: 'https://demo-chat-lavkushs-projects-bf4da442.vercel.app',
+    origin: 'https://demo-chat-u5z7-lavkushs-projects-bf4da442.vercel.app/',
+    
     methods: ['GET', 'POST'],
     credentials: true
   }
