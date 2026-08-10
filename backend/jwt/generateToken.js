@@ -4,10 +4,11 @@ const createTokenAndSaveCookie = (userId, res) => {
     const token = jwt.sign({ id: userId }, process.env.JWT_TOKEN, {
         expiresIn: '5d',
     });
-   res.cookie("jwt",token,{
-    httpOnly: true, // xss se protect
-    secure: true,
-    sameSite: "strict", // csrf se protect
+    
+   res.cookie("jwt", token, {
+    httpOnly: true, // protects from XSS
+    secure: true,   // required when sameSite is "none"
+    sameSite: "none", // REQUIRED to allow Vercel to talk to Render
    });
 };
 
