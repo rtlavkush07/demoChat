@@ -14,7 +14,8 @@ function useSendMessage() {
 
                 const res = await axios.post(
                     `https://demochat-1.onrender.com/api/message/send/${selectedConversation._id}`,
-                    { message }
+                    { message },
+                    { withCredentials: true }
                 );
 
                 console.log("Message sent successfully:", res.data);
