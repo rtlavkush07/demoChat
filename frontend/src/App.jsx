@@ -20,11 +20,11 @@ function App() {
         path="/"
         element={
           authUser ? (
-            <div className="flex h-screen">
-              <Logout />
-              <Left />
-              <Right />
-            </div>
+           <div className="flex h-screen bg-slate-900 overflow-hidden text-white">
+  <Logout />
+  <Left />
+  <Right />
+</div>
           ) : (
           <Navigate to={"/login"} />
           )
