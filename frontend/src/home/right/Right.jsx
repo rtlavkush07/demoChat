@@ -8,34 +8,28 @@ import { useAuth } from "../../context/AuthProvider.jsx";
 function Right() {
   const { selectedConversation, setSelectedConversation } = useConversation();
   
-  // Get the authenticated user's data
   const [authUser] = useAuth();
-  // console.log("Inspecting authUser object in Right.jsx:", authUser);
+  
   useEffect(() => {
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]); 
 
-  //  Preparing the data to be passed as props
-const currentUserUsername = authUser?.user?.name;
+  const currentUserUsername = authUser?.user?.name;
   const receiverId = selectedConversation?._id;
 
   return (
-    <div className="w-full bg-slate-800 text-gray-300">
-      <div>
-        {!selectedConversation ? (
-          <NoChat />
-        ) : (
-          <>
-            <Chatuser />
-            <div className="py-2 flex-1 overflow-y-auto" style={{ maxHeight: "calc(88vh - 8vh)" }}>
-              {/*  Pass the 'username' prop to Messages */}
-              <Messages username={currentUserUsername} />
-            </div>
-            {/*  Pass 'username' and 'receiverId' props to Type */}
-            <Type username={currentUserUsername} receiverId={receiverId} />
-          </>
-        )}
-      </div>
+    <div className={`w-full md:w-[65%] bg-black/30 text-white flex flex-col h-screen ${!selectedConversation ? "hidden md:flex" : "flex"}`}>
+      {!selectedConversation ? (
+        <NoChat />
+      ) : (
+        <>
+          <Chatuser />
+          <div className="py-2 flex-1 overflow-y-auto" style={{ maxHeight: "calc(88vh - 8vh)" }}>
+            <Messages username={currentUserUsername} />
+          </div>
+          <Type username={currentUserUsername} receiverId={receiverId} />
+        </>
+      )}
     </div>
   );
 }
@@ -47,12 +41,14 @@ const NoChat = () => {
   const userName = authUser?.user?.name || authUser?.name || 'User';
 
   return (
-    <div className='flex h-screen items-center justify-center'>
-      <h1 className='text-center font-semibold text-xl'>
-        Welcome <span>{userName}</span>
-        <br />
-        Please select a chat to start messaging.
-      </h1>
+    <div className='flex flex-1 items-center justify-center bg-black/30 h-full'>
+      <div className="text-center bg-black/40 p-8 rounded-lg border border-gray-700/50 mx-4">
+        <h1 className='font-semibold text-2xl text-white mb-2'>
+          Welcome <span className="text-blue-500">{userName}</span>
+          <br />
+          Please select a chat to start messaging.
+        </h1>
+      </div>
     </div>
   );
 };
