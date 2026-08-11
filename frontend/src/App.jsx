@@ -20,7 +20,7 @@ function App() {
         path="/"
         element={
           authUser ? (
-           <div className="flex h-screen bg-slate-900 overflow-hidden text-white">
+           <div className="flex h-[100dvh] bg-slate-900 overflow-hidden text-white">
   <Logout />
   <Left />
   <Right />
