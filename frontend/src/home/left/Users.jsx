@@ -8,9 +8,7 @@ const [allUsers, loading] =  userGetAllUsers();
   const realUsers = allUsers?.allUsers || [];
   // console.log(realUsers);
   return (
-  <div  className="py-2 flex-1 overflow-y-auto"
-        style={{ maxHeight: "calc(84vh - 10vh)" }}
-        >
+  <div className="py-2 flex-1 overflow-y-auto">
            {/* console.log("Rendering :", user); */}
     
    {realUsers.map((user,index)=>{
